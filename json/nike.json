@@ -1,0 +1,49 @@
+{
+    "item1": {
+        "name": "LUNAREPIC LOW",
+        "price": "$160",
+        "src": "nike1.jpg"
+    },
+
+    "item2": {
+        "name": "Nike Air Zoom",
+        "price": "$110",
+        "src": "nike2.jpeg"
+    },
+
+    "item3": {
+        "name": "Zoom Struc 20",
+        "price": "$120",
+        "src": "nike3.jpeg"
+    },
+
+    "item4": {
+        "name": "Free RN Flyknit",
+        "price": "$104",
+        "src": "nike4.jpeg"
+    },
+
+    "item5": {
+        "name": "Free RN",
+        "price": "$70",
+        "src": "nike5.jpeg"
+    },
+
+    "item6": {
+        "name": "Free RN ID",
+        "price": "$140",
+        "src": "nike6.png"
+    },
+
+    "item7": {
+        "name": "Shield ID",
+        "price": "$155",
+        "src": "nike7.png"
+    },
+
+    "item8": {
+        "name": "Flex 2016",
+        "price": "$70",
+        "src": "nike8.jpeg"
+    }
+}

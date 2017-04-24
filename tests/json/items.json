@@ -1,0 +1,49 @@
+{
+    "item1": {
+        "name": "Michael Koors",
+        "price": "$200",
+        "src": "/img/"
+    },
+
+    "item2": {
+        "name": "Sperry",
+        "price": "$120",
+        "src": "/img/"
+    },
+
+    "item3": {
+        "name": "Timberlands",
+        "price": "$180",
+        "src": "/img/"
+    },
+
+    "item4": {
+        "name": "Brooksbrothers",
+        "price": "$96",
+        "src": "/img/"
+    },
+
+    "item5": {
+        "name": "Nike",
+        "price": "$70",
+        "src": "/img/"
+    },
+
+    "item6": {
+        "name": "Adidas",
+        "price": "$145",
+        "src": "/img/"
+    },
+
+    "item7": {
+        "name": "Michael Koors",
+        "price": "$200",
+        "src": "/img/"
+    },
+
+    "item8": {
+        "name": "Sperry",
+        "price": "$120",
+        "src": "/img/"
+    }
+}

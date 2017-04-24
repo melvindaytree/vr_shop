@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping Gallery</title>
+    <meta name="description" content="360&deg; Image Gallery - A-Frame">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <script src="components/set-image.js"></script>
+    <script src="https://rawgit.com/ngokevin/aframe-layout-component/master/dist/aframe-layout-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-text-component@^0.4.1/dist/aframe-text-component.min.js"></script>
+
+
+  </head>
+  <body>
+    <a-scene>
+        <a-assets>
+          <img id="shoe" crossorigin="" src="http://melvindaytree.com/blog/vr/img/shoe.jpeg">
+
+        <!-- Image link template to be reused. -->
+        <script id="link" type="text/html">
+          <a-entity class="link"
+            geometry="primitive: plane; height: 1; width: 1"
+            material="shader: flat; src: ${thumb}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+            set-image="on: click; target: #image-360; src: ${src}"
+            sound="on: click; src: #click-sound"></a-entity>
+        </script>
+        <script id="animate" type="text/html">
+        <a-animation attribute="scale" begin="click" repeat="0" to="2 2 2"></a-animation>
+        </script>
+      </a-assets>
+
+      <!-- 360-degree image. -->
+      <a-sky id="image-360" radius="15" src=""></a-sky>
+
+
+<a-entity id="txt" text="color:black; opacity:1; value:Stahl; width:3.5; align:center;" position="0 0 -4"></a-entity>
+ <a-sphere id="swap" color="cadetblue" radius=".2" rotation="0 0 0" position=".5 -1 -6"></a-sphere>
+
+
+
+    <!--Animation-->
+
+    
+
+      <!-- Camera + cursor. -->
+      <a-entity id="user" camera look-controls position="0 0 ">
+        <a-cursor id="cursor" color="black"></a-cursor>
+      </a-entity>
+    </a-scene>
+
+      <script src="js/textmod.js"></script>
+  </body>
+
+  
+</html>

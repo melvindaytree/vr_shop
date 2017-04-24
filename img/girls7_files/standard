@@ -1,0 +1,79 @@
+var mboxCurrent=mboxFactories.get('default').get('dsw_global',0);mboxCurrent.setEventTime('include.start');document.write('<div style="visibility: hidden; display: none" id="mboxImported-default-dsw_global-0">');;_mboxDefaultContentOffer = function() {
+  this._onLoad = function() {};
+};
+
+_mboxDefaultContentOffer.prototype.setOnLoad = function(_onLoad) {
+  this._onLoad = _onLoad;
+};
+
+_mboxDefaultContentOffer.prototype.shouldAppendClickHandler = function(_mbox, _clickHandlerDiv, _defaultDiv) {
+  var _result = _mbox.getFetcher && _mbox.getFetcher().getType() === 'ajax';
+  _result = _result && _mbox.getDiv() === _mbox.getDefaultDiv();
+  _result = _result && _clickHandlerDiv !== null;
+  _result = _result && _clickHandlerDiv !== _defaultDiv;
+
+  return  _result;
+};
+
+_mboxDefaultContentOffer.prototype.appendClickHandlerIfRequired = function(_mbox, _clickHandlerDiv, _defaultDiv) {
+  if (this.shouldAppendClickHandler(_mbox, _clickHandlerDiv, _defaultDiv)) {
+    _defaultDiv.appendChild(_clickHandlerDiv);
+  }
+};
+
+_mboxDefaultContentOffer.prototype.onClickHandler = function(_mbox) {
+  // just use _mbox.getName() when everyone is on mboxVersion >= 21
+  var _mboxName = _mbox.getName ? _mbox.getName() : _mbox.id;
+  var _clickDiv = document.getElementById('mboxClick-' + _mboxName);
+
+  if (_clickDiv !== null) {
+    _clickDiv.onclick();
+  }
+};
+
+_mboxDefaultContentOffer.prototype.show = function(_mbox) {
+  try {
+    var _self = this;
+    var _defaultDiv = _mbox.getDefaultDiv();
+
+    if (_defaultDiv === null) {
+      return 0;
+    }
+
+    _defaultDiv.onclick = function () {
+      _self.onClickHandler(_mbox);
+    };
+
+    var _clickHandlerDiv = _mbox.getDiv();
+    var _result = _mbox.hide();
+
+    if (_result === 1) {
+      this.appendClickHandlerIfRequired(_mbox, _clickHandlerDiv, _defaultDiv);
+      this._onLoad();
+    }
+
+    return _result;
+  } catch (e) {
+    var _errorMessage = "Default content offer caused exception: " + e;
+
+    if (_mbox.setMessage) {
+      _mbox.setMessage(_errorMessage);
+    } else {
+      _mbox.setError(_errorMessage);
+    }
+
+    return 0;
+  }
+};
+
+(function(){
+  var shouldShowMbox = mboxCurrent.getFetcher && mboxCurrent.getFetcher().getType() === 'ajax';
+
+  mboxCurrent.setOffer(new _mboxDefaultContentOffer());
+
+  if (shouldShowMbox) {
+    mboxCurrent.show();
+  }
+}());
+
+document.write('<script type=\"text\/javascript\">\r\n\/*mboxHighlight+ (1of2) v1 ==> Response Plugin*\/\r\nwindow.ttMETA=(typeof(window.ttMETA)!=\'undefined\')?window.ttMETA:[];window.ttMETA.push({\'mbox\':\'dsw_global\',\'campaign\':\'Monitoring Campaign - Purchased clicked recs (All)\',\'experience\':\'Experience  A\',\'offer\':\'Default Content\'});window.ttMBX=function(x){var mbxList=[];for(i=0;i<ttMETA.length;i++){if(ttMETA[i].mbox==x.getName()){mbxList.push(ttMETA[i])}}return mbxList[x.getId()]}\r\n<\/script>');document.write('</div>');mboxCurrent.setEventTime('include.end');mboxFactories.get('default').get('dsw_global',0).loaded();

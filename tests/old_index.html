@@ -50,49 +50,44 @@
       <!-- Navigation -->
 
       <a-sphere id="swap" color="cadetblue" radius=".2" rotation="0 0 0" position=".5 -1 -6"></a-sphere>
-       <a-sphere id="switch" color="cadetblue" radius=".2" rotation="0 0 0" position="0 -1 -6"></a-sphere>
+       <a-sphere color="cadetblue" radius=".2" rotation="0 0 0" position="0 -1 -6"></a-sphere>
       <a-sphere color="cadetblue" radius=".2" rotation="0 0 0" position="-.5 -1 -6"></a-sphere>
-      
-      <a-entity id="navtext">
-        <a-entity id="style" text="color:black; opacity:1; value:Change Style; width:3.5; align:center;" position="1.2 -1 -6"></a-entity>
-        <a-entity id="next" text="color:black; opacity:1; value:More Pairs; width:3.5; align:center;" position="0 -.7 -6"></a-entity>
-        <a-entity id="reset" text="color:black; opacity:1; value:Reset; width:3.5; align:center;" position="-1 -1 -6"></a-entity>
-      </a-entity>
 
       <!-- Image links. -->
  
 
       <a-entity id="links" layout="type: circle; radius: 4; margin: .5;" position="0 0 -2">
-        <a-image id="img1" src="http://melvindaytree.com/blog/vr/img/shoe.png"  rotation="0 -90 0"></a-image>
-        <a-image id="img2" src="http://melvindaytree.com/blog/vr/img/shoe2.png" rotation="0 -120 0"></a-image>
-        <a-image id="img3" src="http://melvindaytree.com/blog/vr/img/shoe3.png"  rotation="0 180 0"></a-image>
-        <a-image id="img4" src="http://melvindaytree.com/blog/vr/img/shoe4.png"  rotation="0 120 0"></a-image>
-        <a-image id="img5" src="http://melvindaytree.com/blog/vr/img/shoe5.png"  rotation="0 90 0"></a-image>
-        <a-image id="img6" src="http://melvindaytree.com/blog/vr/img/shoe.png"  rotation="0 45 0"></a-image>
-        <a-image id="img7" src="http://melvindaytree.com/blog/vr/img/shoe2.png" ></a-image>
-        <a-image id="img8" src="http://melvindaytree.com/blog/vr/img/shoe3.png"  rotation="0 -45 0"></a-image>
+        <a-entity id="img1" template="src: #link" look-at="[camera]" data-src="#cubes" data-thumb="#shoe" rotation="0 -90 0"></a-entity>
+      <!--  <a-entity template="src: #link" look-at="[camera]" data-src="#city" data-thumb="#shoe2" rotation="0 -120 0"></a-entity> -->
+        <a-image id="testimg" src="http://melvindaytree.com/blog/vr/img/shoe2.png" rotation="0 -120 0"></a-image>
+        <a-entity template="src: #link" look-at="[camera]" data-src="#sechelt" data-thumb="#shoe3" rotation="0 180 0"></a-entity>
+        <a-entity template="src: #link" look-at="[camera]" data-src="#cubes" data-thumb="#shoe4" rotation="0 120 0"></a-entity>
+        <a-entity template="src: #link" look-at="[camera]" data-src="#city" data-thumb="#shoe5" rotation="0 90 0"></a-entity>
+        <a-entity template="src: #link" look-at="[camera]" data-src="#sechelt" data-thumb="#shoe" rotation="0 45 0"></a-entity>
+        <a-entity template="src: #link" look-at="[camera]" data-src="#cubes" data-thumb="#shoe2"></a-entity>
+        <a-entity template="src: #link" look-at="[camera]" data-src="#sechelt" data-thumb="#shoe4" rotation="0 -45 0"></a-entity>
       </a-entity>
 
       <a-entity id="texts" layout="type: circle; radius: 4.5; margin: .5;" position="0 0.5 -2">
-        <a-entity id="name1" text="color:black; opacity:1; value:Dr. Martins; width:3.5; align:center;" rotation="0 -90 0"></a-entity>
-        <a-entity id="name2" text="color:black; opacity:1; value:Stahl; width:3.5; align:center;" rotation="0 -120 0"></a-entity>
-        <a-entity id="name3" text="color:black; opacity:1; value:Tahoe; width:3.5; align:center;" rotation="0 180 0"></a-entity>
-        <a-entity id="name4" text="color:black; opacity:1; value:Wingtip; width:3.5; align:center;" rotation="0 120 0"></a-entity>
-        <a-entity id="name5" text="color:black; opacity:1; value:Oxford; width:3.5; align:center;" rotation="0 90 0"></a-entity>
-        <a-entity id="name6" text="color:black; opacity:1; value:Sperry; width:3.5; align:center;" rotation="0 45 0"></a-entity>
-        <a-entity id="name7" text="color:black; opacity:1; value:Timbs; width:3.5; align:center;"></a-entity>
-        <a-entity id="name8" text="color:black; opacity:1; value:Shoe; width:3.5; align:center;" rotation="0 -45 0"></a-entity>   
+        <a-entity text="color:black; opacity:1; value:Dr. Martins; width:3.5; align:center;" rotation="0 -90 0"></a-entity>
+        <a-entity text="color:black; opacity:1; value:Stahl; width:3.5; align:center;" rotation="0 -120 0"></a-entity>
+        <a-entity text="color:black; opacity:1; value:Tahoe; width:3.5; align:center;" rotation="0 180 0"></a-entity>
+        <a-entity text="color:black; opacity:1; value:Wingtip; width:3.5; align:center;" rotation="0 120 0"></a-entity>
+        <a-entity text="color:black; opacity:1; value:Oxford; width:3.5; align:center;" rotation="0 90 0"></a-entity>
+        <a-entity text="color:black; opacity:1; value:Sperry; width:3.5; align:center;" rotation="0 45 0"></a-entity>
+        <a-entity text="color:black; opacity:1; value:Timbs; width:3.5; align:center;"></a-entity>
+        <a-entity text="color:black; opacity:1; value:Shoe; width:3.5; align:center;" rotation="0 -45 0"></a-entity>   
       </a-entity>
 
       <a-entity id="prices" layout="type: circle; radius: 4.5; margin: .5;" position="0 1 -2">
-        <a-entity id="price1" text="color:black; opacity:1; value:$180; width:3.5; align:center;" rotation="0 -90 0"></a-entity>
-        <a-entity id="price2" text="color:black; opacity:1; value:$80; width:3.5; align:center;" rotation="0 -120 0"></a-entity>
-        <a-entity id="price3" text="color:black; opacity:1; value:$95; width:3.5; align:center;" rotation="0 180 0"></a-entity>
-        <a-entity id="price4" text="color:black; opacity:1; value:$200; width:3.5; align:center;" rotation="0 120 0"></a-entity>
-        <a-entity id="price5" text="color:black; opacity:1; value:$56; width:3.5; align:center;" rotation="0 90 0"></a-entity>
-        <a-entity id="price6" text="color:black; opacity:1; value:$99; width:3.5; align:center;" rotation="0 45 0"></a-entity>
-        <a-entity id="price7" text="color:black; opacity:1; value:$201; width:3.5; align:center;"></a-entity>
-        <a-entity id="price8" text="color:black; opacity:1; value:$97; width:3.5; align:center;" rotation="0 -45 0"></a-entity>   
+        <a-entity text="color:black; opacity:1; value:$180; width:3.5; align:center;" rotation="0 -90 0"></a-entity>
+        <a-entity text="color:black; opacity:1; value:$80; width:3.5; align:center;" rotation="0 -120 0"></a-entity>
+        <a-entity text="color:black; opacity:1; value:$95; width:3.5; align:center;" rotation="0 180 0"></a-entity>
+        <a-entity text="color:black; opacity:1; value:$200; width:3.5; align:center;" rotation="0 120 0"></a-entity>
+        <a-entity text="color:black; opacity:1; value:$56; width:3.5; align:center;" rotation="0 90 0"></a-entity>
+        <a-entity text="color:black; opacity:1; value:$99; width:3.5; align:center;" rotation="0 45 0"></a-entity>
+        <a-entity text="color:black; opacity:1; value:$201; width:3.5; align:center;"></a-entity>
+        <a-entity text="color:black; opacity:1; value:$97; width:3.5; align:center;" rotation="0 -45 0"></a-entity>   
       </a-entity>
         </a-entity>
 
@@ -100,9 +95,7 @@
 
       <!-- Camera + cursor. -->
       <a-entity id="user" camera look-controls position="0 0 -3.5">
-        <a-cursor id="cursor" color="black"
-          event-set__3="_event: mouseenter; color: black">
-        </a-cursor>
+        <a-cursor id="cursor" color="black"></a-cursor>
         <!-- <a-cursor id="cursor"
           animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
           animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
@@ -112,10 +105,6 @@
       </a-entity>
     </a-scene>
 
-      <script
-        src="https://code.jquery.com/jquery-3.1.1.js"
-        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-        crossorigin="anonymous"></script>
      <script src="js/shop.js"></script>
   </body>
 </html>
